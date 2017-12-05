@@ -1,0 +1,13 @@
+BPNode 抽象节点基类 所有行为树中的节点均继承自该节点
+BPBlackBoard 黑板类 行为树中所有使用的数据均保持在该类中
+BPConfiguration 行为树配置类
+BPResult 执行结果枚举类型
+BPAction 行为节点 用来执行具体的游戏逻辑
+BPParallel 逻辑节点 同时执行所有子节点的逻辑
+BPPrioritySelector 逻辑节点 只执行第一个满足条件的子节点
+BPSequence 逻辑节点 依次执行所有满足条件的子节点
+
+
+使用说明
+
+通过Node.AddChild 添加子节点 通过Root.Activate 初始化数据 设置好树结构后 在Update()函数中 调用if(root.Evaluate) root.tick() 来执行整个行为树
